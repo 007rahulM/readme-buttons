@@ -4,11 +4,12 @@ import handler from './api/index.js';
 
 const app = express();
 
-app.get('/api/button', (req, res) => {
-  // Mock the Vercel req/res objects
+// --- FIX: Change '/api/button' to '/api/index' ---
+app.get('/api/index', (req, res) => {
   handler(req, res);
 });
 
-app.listen(3000, () => {
-  console.log('Server running at http://localhost:3000/api/button');
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Backend running at http://localhost:${PORT}/api/index`);
 });
