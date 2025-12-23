@@ -71,13 +71,16 @@ function App() {
           </div>
         </div>
 
-        {/* OUTPUT */}
+       {/* OUTPUT */}
         <div className="input-group" style={{marginTop: '30px'}}>
           <label>Copy Markdown Code</label>
           <div className="code-block">
             {markdownCode}
           </div>
-          <button className="copy-btn" onClick={() => navigator.clipboard.writeText(markdownCode)}>
+          <button className="copy-btn" onClick={() => {
+             navigator.clipboard.writeText(markdownCode);
+             alert("Copied to clipboard!");
+          }}>
             Copy Snippet
           </button>
         </div>
